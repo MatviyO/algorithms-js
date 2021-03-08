@@ -11,8 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ef3eb47-3455-45e4-af65-12cd6c4237ae" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resolving-tasks/search-el-in-sorted-matrix/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resolving-tasks/vowels/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resolving-tasks/schedule-trains/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resolving-tasks/schedule-trains/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +29,9 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -43,7 +46,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1615201947085</updated>
-      <workItem from="1615201951865" duration="2766000" />
+      <workItem from="1615201951865" duration="6778000" />
     </task>
     <servers />
   </component>
