@@ -11,6 +11,7 @@ const input = [
     [9, 19,29,39,49,59,69,79,89,99]
 ];
 
+
 function search(value, data) {
     let y = 0;
     let x = 0;
