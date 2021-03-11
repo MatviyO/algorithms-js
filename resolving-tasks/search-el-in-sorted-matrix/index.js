@@ -12,7 +12,6 @@ const input = [
 ];
 
 function search(value, data) {
-
     let y = 0;
     let x = 0;
 
