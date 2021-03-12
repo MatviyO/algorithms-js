@@ -18,7 +18,7 @@ function search(value, data) {
     let x = 0;
 
     let left = -1;
-    let right = data[0].length;6
+    let right = data[0].length;
 }
 
 console.log(search(86, input))
