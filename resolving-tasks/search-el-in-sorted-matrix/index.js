@@ -19,6 +19,12 @@ function search(value, data) {
 
     let left = -1;
     let right = data[0].length;
+
+    if (data[y][x] > value) {
+        return false;
+    } else if (data[y][data[y].length - 1] < value) {
+        x = data[y].length - 1;
+    }
 }
 
 console.log(search(86, input))
