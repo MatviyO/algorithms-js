@@ -25,6 +25,37 @@ function search(value, data) {
     } else if (data[y][data[y].length - 1] < value) {
         x = data[y].length - 1;
     }
+
+    let stop = false
+
+    while(right - left > 0 && !stop) {
+        if (data[y][x] === value) {
+            stop = true;
+        } else {
+            x = Math.floor((left + right) / 2);
+            if(data[y][x] < value && data[y][x + 1] > value) {
+                stop = true
+            } else if (data[y][x] < value) {
+                left = x;
+            } else {
+                right = x;
+            }
+        }
+    }
+    left = -1;
+    right = data.length;
+
+    stop = false;
+
+    while (right - left > 0 &&  !stop) {
+        y = Math.floor((left + right) / 2);
+
+        if(data[y][x] === value) {
+            stop = true;
+        } else if (data[y][x]) {
+            
+        }
+    }
 }
 
 console.log(search(86, input))
