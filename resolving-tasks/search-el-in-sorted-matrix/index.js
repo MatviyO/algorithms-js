@@ -16,6 +16,7 @@ const input = [
 function search(value, data) {
     let y = 0;
     let x = 0;
+    let i = 0;
 
     let left = -1;
     let right = data[0].length;
@@ -29,6 +30,7 @@ function search(value, data) {
     let stop = false
 
     while(right - left > 0 && !stop) {
+        i++;
         if (data[y][x] === value) {
             stop = true;
         } else {
@@ -48,14 +50,18 @@ function search(value, data) {
     stop = false;
 
     while (right - left > 0 &&  !stop) {
+        i++;
         y = Math.floor((left + right) / 2);
 
         if(data[y][x] === value) {
             stop = true;
         } else if (data[y][x]) {
-            
+            left = y;
+        } else {
+            right = y;
         }
     }
+    return { y, x, i }
 }
 
 console.log(search(86, input))
