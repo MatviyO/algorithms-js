@@ -1,43 +1,15 @@
-document.addEventListener('touchstart', handleTouchStart, false)
-document.addEventListener('touchmove', handleTouchMe, false)
-
 const logBlock = document.querySelector('.log-block')
 
-let x1 = null;
-let y1 = null;
+let div = document.createElement('div')
 
-function handleTouchStart(event) {
-    const firstTouch = event.touches[0];
-    x1 = firstTouch.clientX;
-    y1 = firstTouch.clientY;
+div.textContent = 'New Div'
+div.classList.add('bg-primary')
 
-    console.log(x1, y1)
-}
+logBlock.append(div); // append   this method  added to end in element
 
-function handleTouchMe(event) {
-    if (!x1 || !y1) {
-        return false
-    }
-    let x2 = event.touches[0].clientX;
-    let y2 = event.touches[0].clientX;
+let div1 = document.createElement('div')
 
-    let xDiff = x2 - x1;
-    let yDiff = y2 - y1;
+div1.textContent = 'New Prepend'
+div1.classList.add('bg-primary')
 
-    if (Math.abs(xDiff) > Math.abs(yDiff)) {
-        if (xDiff > 0) {
-            logBlock.textContent = 'right'
-        } else {
-            logBlock.textContent = 'left'
-        }
-    } else {
-        if (yDiff > 0) {
-            logBlock.textContent = 'down'
-        } else {
-            logBlock.textContent = 'up'
-        }
-    }
-    x1 = null
-    y1 = null;
-
-}
+logBlock.prepend(div1); // prepend this method  added to start in element
