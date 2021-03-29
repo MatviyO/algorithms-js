@@ -22,6 +22,7 @@ div2.classList.add('bg-primary')
 
 logBlock.before(div2); // before this method  added pered eleventom top  1 lvl
 
+
 //after
 let div3 = document.createElement('div')
 
