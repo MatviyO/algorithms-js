@@ -7,7 +7,6 @@ let imm;
 imm = arr.slice(0, -1) // return new arr with removed last item   immunaable
 console.log(imm)
 
-
 //push
 let arr1 = [44, 22, 55];
 arr.push(100) // mutable
