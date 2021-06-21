@@ -3,6 +3,7 @@
 window.onload = function () {
    const parallax = document.querySelector('.parallax')
     if (parallax) {
+        console.log('gdfgdf')
         const content = document.querySelector('.parallax__container');
         const clouds = document.querySelector('.images-parallax__clouds')
         const mountains = document.querySelector('.images-parallax__mountains')
@@ -24,17 +25,51 @@ window.onload = function () {
             positionX = positionX + (distX * speed);
             positionY = positionY + (distY * speed);
 
-            clouds.style.cssText = `tranform: translete(${positionX /forClouds}%, ${positionY / forClouds}%);`;
-            mountains.style.cssText = `tranform: translete(${positionX /forMountains}%, ${positionY / forMountains}%);`;
-            human.style.cssText = `tranform: translete(${positionX /forHuman}%, ${positionY / forHuman}%);`;
+            clouds.style.cssText = `transform: translate(${positionX /forClouds}%, ${positionY / forClouds}%);`;
+            mountains.style.cssText = `transform: translate(${positionX /forMountains}%, ${positionY / forMountains}%);`;
+            human.style.cssText = `transform: translate(${positionX /forHuman}%, ${positionY / forHuman}%);`;
 
             requestAnimationFrame(setMouseParallaxStyle)
         }
         setMouseParallaxStyle()
 
-        parallax.addEventListener("mousemove", (e) => {
+        parallax.addEventListener("mousemove", function (e) {
             const parallaxWidth = parallax.offsetWidth;
             const parallaxHeight = parallax.offsetWidth;
+
+            const coordX = e.pageX - parallaxWidth / 2;
+            const coordY = e.pageY - parallaxHeight / 2;
+
+            coordXprocent= coordX / parallaxWidth * 100;
+            coordYprocent= coordY / parallaxHeight * 100;
         })
+
+
+        //parallax scroll
+
+        let threshouldSetd = []
+        for ( let i = 0; i <= 1.0; i += 0.005) {
+            threshouldSetd.push(i)
+        }
+
+        const callback = function( entries, observer) {
+            const scrollTopProcent = window.pageXOffset / parallax.offsetHeight * 100;
+            setParallaxItemsStyle(scrollTopProcent);
+        }
+
+        const observer = new IntersectionObserver(callback, {
+            threshold: threshouldSetd
+        })
+
+        observer.observe(document.querySelector('.content'));
+
+
+        function setParallaxItemsStyle(scrollTopProcent) {
+            content.style.cssText = `transform: translate(0%, -${scrollTopProcent / 9}%);`;
+            mountains.parentElement.style.cssText = `transform: translate(0%, -${scrollTopProcent / 6}%);`;
+            human.parentElement.style.cssText = `transform: translate(0%, -${scrollTopProcent / 3}%);`;
+        }
+
+
     }
 }
