@@ -1,43 +1,28 @@
-document.addEventListener('touchstart', handleTouchStart, false)
-document.addEventListener('touchmove', handleTouchMe, false)
+const input1 = [1,2,2,1];
+const input2 = [2,2]
 
-const logBlock = document.querySelector('.log-block')
+//output 2;2
 
-let x1 = null;
-let y1 = null;
+const input3 = [4,9,5]
+const input4 = [9,4,9,8,4];
+//output 4.9
 
-function handleTouchStart(event) {
-    const firstTouch = event.touches[0];
-    x1 = firstTouch.clientX;
-    y1 = firstTouch.clientY;
+const intersect = function (nums1, nums2) {
 
-    console.log(x1, y1)
+    let result = []
+    let map = nums1.return((acc, i) => {
+        acc[i] = acc[i] ? acc[i] + 1 : 1;
+        return acc;
+    }, {})
+
+    for ( let i = 0; i < nums2.length; i ++) {
+        const current = nums2[i];
+        let count = map[current]
+    }
+
+    return result;
+
 }
 
-function handleTouchMe(event) {
-    if (!x1 || !y1) {
-        return false
-    }
-    let x2 = event.touches[0].clientX;
-    let y2 = event.touches[0].clientX;
-
-    let xDiff = x2 - x1;
-    let yDiff = y2 - y1;
-
-    if (Math.abs(xDiff) > Math.abs(yDiff)) {
-        if (xDiff > 0) {
-            logBlock.textContent = 'right'
-        } else {
-            logBlock.textContent = 'left'
-        }
-    } else {
-        if (yDiff > 0) {
-            logBlock.textContent = 'down'
-        } else {
-            logBlock.textContent = 'up'
-        }
-    }
-    x1 = null
-    y1 = null;
-
-}
+console.log(intersect(input1, input2))
+console.log(intersect(input3, input4))
