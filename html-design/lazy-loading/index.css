@@ -1,0 +1,25 @@
+html, body {
+    height: 100%;
+    line-height: 1;
+    background-color: black;
+    color: #fff;
+
+}
+
+.wrapper {
+    min-height: 100%;
+}
+
+.page {
+    padding: 50px 0;
+
+}
+
+.loading-icon {
+    background: url("../img/loading.gif") center / 50px no-repeat;
+    height: 50px;
+}
+
+
+
+
