@@ -5,6 +5,7 @@ function directionReduction(arr) {
         WEST: 'EAST',
         EAST: 'WEST'
     }
+    
     return arr.reduce((acc, el) => {
         if (acc[acc.length -1] === oppositeDirs[el]) {
             acc.pop()
