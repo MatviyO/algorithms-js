@@ -23,15 +23,26 @@ let obj = {
     5: 4
 }
 const sortObj = (item) => {
-    let val = Object.values(obj)
-    return val.sort()
+    let val = Object.values(item)
+    return val.sort((a, b) => a - b)
+    // return val.sort((a, b) => a + b)
 }
-console.log(sortObj());
+console.log(sortObj(obj));
+//4
+// assign objects
 
+const a3 = {1:10, 3: 20}
+const b4 = {2: 30, 5: 30}
+console.log(Object.assign({}, a3, b4))
 
+//6
+// equal string palendrom
 
+const pal = 'aabb'
 
-
+const palindrom = str => {
+    return str === str.split('').reverse().join('');
+}
 
 
 
