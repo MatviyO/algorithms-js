@@ -1,3 +1,0 @@
-type ApiResponse = {
-    item?: any
-}
