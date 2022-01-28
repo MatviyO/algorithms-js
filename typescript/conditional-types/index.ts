@@ -31,3 +31,11 @@ type R = Filter<'a' | 'b' | 'c', 'b'>  // b removed , because b === b  was true 
 
 // also 
 type R1 = Exclude<'a' | 'b' | 'c', 'b'>
+
+//exampe 4 with Infer
+
+type TryInfer<T extends object = object> = T extends infer R ? R : never;
+type M = TryInfer<{a: 1, b: 2}>
+//infer  - recognize transferred type in object
+
+//example 5 mega cool, it return type funcion , 
