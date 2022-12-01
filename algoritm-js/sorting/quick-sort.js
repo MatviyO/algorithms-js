@@ -1,7 +1,8 @@
 //по принципу поділу, ділимо масив на підмасиви, ділимо по центру
 //cамий кращий
 const arr = [6,1,5,9,7,3,11,2];
-
+let time = performance.now();
+console.time('mark')
 //example 1
 function quickSort(array) {
     if (array.length <= 1) {
@@ -22,5 +23,10 @@ function quickSort(array) {
     }
     return [...quickSort(less), midValue, ...quickSort(more)]
 }
-
+time = performance.now() - time;
+console.log(time)
+console.timeEnd('mark')
 console.log(quickSort(arr))
+
+//example 2
+
